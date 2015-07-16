@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Health Pavilion - Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<script>
+function ageval() {
+  var agev = document.getElementById('age').value;
+  if(isNaN(agev))
+  {
+    alert("Age should be a number");
+  }
+  else if(agev >= 105)
+  {
+   alert("Age entered is more than 105");
+  }
+}
+function heightval() {
+  var heightv = document.getElementById('height').value;
+  if(isNaN(heightv))
+  {
+    alert("Height should be a number");
+  }
+  else if(heightv >= 244)
+  {
+    alert("Height entered is more than 8 feets");
+  }
+}
+function weightval() {
+  var weightv = document.getElementById('weight').value;
+  if(isNaN(weightv))
+  {
+    alert("Weight should be a number");
+  }
+  else if(weightv >= 150)
+  {
+    alert("The weight entered is more than 150kg");
+  }
+}
+function hrateval() {
+  var hratetv = document.getElementById('hrate').value;
+  if(isNaN(hratev))
+  {
+    alert("Heart Rate should be a number");
+  }
+  else if(hratev <=28 || hratev >=120)
+  {
+    alert("The data entered is incorrect");
+  }
+}
+function bpval() {
+  var bpv = document.getElementById('bp').value;
+  if(isNaN(bpv))
+  {
+    alert("Blood Pressure should be a number");
+  }
+}
+function tmpval() {
+  var tmpv = document.getElementById('temp').value;
+  if(isNaN(tmpv))
+  {
+    alert("Temperature should be a number");
+  }
+  else if(tmpv <= 96 || tmpv>= 107)
+  {
+    alert("The data entered is incorrect");
+  }
+}
+function oximval() {
+  var oximv = document.getElementById('oxim').value;
+  if(isNaN(oximv))
+  {
+    alert("Oximetry should be a number");
+  }
+  else if(oximv <= 80)
+  {
+    alert("The data entered is incorrect");
+  }
+}
+function hrvval() {
+  var hrvv = document.getElementById('hrv').value;
+  if(isNaN(hrvv))
+  {
+    alert("HRV Data should be a number");
+  }
+  else if(hrvv >= 100)
+  {
+    alert("The data entered is incorrect");
+  }
+}
+</script>
+<body>
+
+<div class="container">
+  <h1><center>Health Pavilion Portal</center></h1>
+  <h2><center>Basic Info</center></h2> <br>
+  <form class="form-horizontal" role="form" method="POST" action="form.php">
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Age:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="age" placeholder="Enter age" name="age"  autocomplete="off" required onblur="ageval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Sex:</label>
+      <div class="col-sm-5">
+        <label class="radio-inline"><input type="radio" name="gen" value="M">Male </label>
+        <label class="radio-inline"><input type="radio" name="gen" value="F">Female</label>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >City:</label>
+      <div class="col-sm-5">
+        <input type="text" class="for m-control" id="city" placeholder="Enter city" name="city"  autocomplete="on" required onblur="cityval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >State:</label>
+      <div class="col-sm-5">
+        <select id="stateselect" class="form-control" name="state">
+          <option>- Select state</option>
+          <option>Andhra Pradesh</option>
+          <option>Arunachal Pradesh</option>
+          <option>Assam</option>
+          <option>Bihar</option>
+          <option>Chhattisgarh</option>
+          <option>Delhi</option>
+          <option>Goa</option>
+          <option>Gujarat</option>
+          <option>Haryana</option>
+          <option>Himachal Pradesh</option>
+          <option>Jammu & Kashmir</option>
+          <option>Jharkhand</option>
+          <option>Karnataka</option>
+          <option>Kerela</option>
+          <option>Maharashtra</option>
+          <option>Madhya Pradesh</option>
+          <option>Manipur</option>
+          <option>Meghalaya</option>
+          <option>Mizoram</option>
+          <option>Meghalaya</option>
+          <option>Nagaland</option>
+          <option>Tamil Nadu</option>
+          <option>Orissa</option>
+          <option>Punjab</option>
+          <option>Rajasthan</option>
+          <option>Sikkim</option>
+          <option>Tamil Nadu</option>
+          <option>Telangana</option>
+          <option>Tripura</option>
+          <option>Uttar Pradesh</option>
+          <option>Uttarakhand</option>
+          <option>West Bengal</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Height:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="height" placeholder="eg. 160 (in centimetres)" name="height" required onblur="heightval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Weight:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="weight" placeholder="eg. 62 (in kgs)" name="weight" required onblur="weightval()">
+      </div>
+    </div>
+  <h2><center>Vital Stats</center></h2>
+  <br>
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Heart Rate:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="hrate" placeholder="eg. 85 (in bpm)" name="hrate" required onblur="hrateval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Blood Pressure:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="bp" placeholder="Blood Pressure" name="bp" required onblur="bpval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Temperature:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="temp" placeholder="eg. 97.5 (in F)" name="tmp" required onblur="tmpval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >Oximetry:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="oxim" placeholder="oximetry" name="oxim" required onblur="oximval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" >HRV:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="hrv" placeholder="HRV Data" name="hrv" required onblur="hrvval()">
+      </div>
+    </div>
+
+    <div class="form-group">
+
+       <center> <button type="submit" class="btn btn-success btn-lg">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
