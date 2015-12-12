@@ -22,7 +22,7 @@ if(isset($_POST['age']) && !empty($_POST['age']) && isset($_POST['gen']) && !emp
   $hrv=$_POST['hrv'];
 }
 
-$conn = new mysqli('127.2.30.2:3306', 'adminz4fLHns', 'H6ZBH6GLK92Y', 'hpav');
+$conn = new mysqli('IP', 'USERNAME', 'PASSWORD', 'DATABASE');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
